@@ -2,30 +2,18 @@ import java.util.Scanner;
 import java.util.NoSuchElementException;
 public class MakeStars{
   public static void main(String args[]){
-    Scanner newscan = new Scanner(System.in);
+    Scanner linescan = new Scanner(System.in);
     String inputtext;
+    String wordtext;
     String outputtext = "";
-    while(true){
-      try{
-        inputtext = newscan.nextLine();
+    while(linescan.hasNextLine()){
+        inputtext = linescan.nextLine();
+        Scanner wordscan = new Scanner(inputtext);
+        wordtext = wordscan.nextLine();
         outputtext = "";
-        String lastchar = " ";
-        for(int i = 0; i < inputtext.length(); i ++){
-          if(inputtext.charAt(i) != ' '){
-            outputtext = outputtext + "*";
-          }else{
-            if (lastchar.equals(inputtext.charAt(i))){
-              continue;
-            }
-            outputtext = outputtext + ' ';
-          }
-          lastchar = inputtext.charAt(i) + "";
+        for(int i = 0; i < wordtext.length(); i ++){
+          outputtext = outputtext + "*";
         } System.out.println(outputtext);
-      }catch(NoSuchElementException e){
-        break;
-      }
-
     }
-
   }
 }
