@@ -8,12 +8,14 @@ public class MakeStars{
     String outputtext = "";
     while(linescan.hasNextLine()){
         inputtext = linescan.nextLine();
-        Scanner wordscan = new Scanner(inputtext);
-        wordtext = wordscan.nextLine();
         outputtext = "";
-        for(int i = 0; i < wordtext.length(); i ++){
-          outputtext = outputtext + "*";
+        Scanner wordscan = new Scanner(inputtext);
+        while(wordscan.hasNext()){
+          wordtext = wordscan.next();
+          for(int i = 0; i < wordtext.length(); i ++){
+            outputtext = outputtext + "*";
+          }outputtext = outputtext + " ";
         } System.out.println(outputtext);
+      }
     }
-  }
 }
