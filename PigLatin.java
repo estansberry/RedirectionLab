@@ -4,17 +4,16 @@ public class PigLatin{
     System.out.println(pigLatinSimple("alphabet"));
   }
   public static String pigLatinSimple(String s){
-    ArrayList<String> vowels = new ArrayList<String>() {
-              {add("a");
-                add("e");
-                add("i");
-                add("o");
-                add("u");}
-              };
-    if(vowels.contains(s.substring(0,1))){
+    String vowels = "a, e, i, o, u";
+    if(vowels.indexOf(s.substring(0,1)) != -1){
       s = s + "hay";
     } else{
       s = s.substring(1 , s.length()) + s.charAt(0) + "ay";
     }return(s);
   }
+
+  //public static String pigLatin(String s){
+
+  //}
+
 }
